@@ -56,6 +56,8 @@ def add_pic
       url_name = 'Pokemon_Red_and_Blue'
     elsif url_name == 'Ōkami'
       url_name = 'Okami'
+    elsif url_name == "NBA Jam"
+      game.update(image: 'https://cdn.vox-cdn.com/thumbor/rKo6PVAIwsNcnQZ-4NGmmU1A3GI=/0x0:1100x618/1220x813/filters:focal(462x221:638x397):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/53893689/NBA_JAM.0.png')
     end
     html = open("https://en.wikipedia.org/wiki/#{url_name}")
     doc = Nokogiri::HTML(html)
@@ -69,7 +71,6 @@ def add_pic
   end
 end
 add_pic
-
 
 # nba_jam = Game.find_by(name: "NBA Jam")
 # nba_jam.update(image: '/app/assets/images/nba_jams.jpeg')
