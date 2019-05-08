@@ -1,6 +1,18 @@
 <h1><%= @game.name %></h1>
 <h3><%= @game.genre %> game released in <%= @game.release_year %> by <%= @game.publisher %> for the <%= @game.platform.split(', ').to_sentence %></h3>
+
 <br>
 <%= image_tag(@game.image) %>
-<br> <br>
-<%= button_to "Add to Favorites", favorites_path(game_id: @game.id, user_id: session), method: :post %>
+
+<br><br>
+<% if flash[:notice] %>
+  <h4 style="color:red";><%= flash[:notice] %></h4>
+<% else %>
+  <br><br><br>
+<% end %>
+
+<% unless @user.games.include?(@game) %>
+  <%= button_to "Add to Favorites", favorites_path(game: @game), method: :post %>
+<% else %>
+  <%= button_to "Remove from Favorites", favorite_path(@favorite.id), method: :delete %>
+<% end %>

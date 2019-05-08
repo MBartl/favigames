@@ -1,0 +1,14 @@
+<%= form_for @user do |f| %>
+  <%= f.label :name, 'Username:' %><br>
+  <%= @user.name %><br>
+  <br>
+  <%= f.label :password_digest, 'Update Password:' %><br>
+  <%= f.password_field :password_digest %>
+  <%= f.label :password_confirmation, 'Confirm Password:' %>
+  <%= f.password_field :password_confirmation %>
+  <%= f.submit 'Update' %>
+  <br>
+  <%= f.label 'Number of favorites:' %><br>
+  <%= @user.favorites.count %><br>
+  <br><br>
+<% end %>

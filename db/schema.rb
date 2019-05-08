@@ -16,12 +16,12 @@ ActiveRecord::Schema.define(version: 2019_05_07_003215) do
   enable_extension "plpgsql"
 
   create_table "favorites", force: :cascade do |t|
-    t.bigint "users_id"
-    t.bigint "games_id"
+    t.bigint "user_id"
+    t.bigint "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["games_id"], name: "index_favorites_on_games_id"
-    t.index ["users_id"], name: "index_favorites_on_users_id"
+    t.index ["game_id"], name: "index_favorites_on_game_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "games", force: :cascade do |t|
@@ -44,6 +44,6 @@ ActiveRecord::Schema.define(version: 2019_05_07_003215) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "favorites", "games", column: "games_id"
-  add_foreign_key "favorites", "users", column: "users_id"
+  add_foreign_key "favorites", "games"
+  add_foreign_key "favorites", "users"
 end

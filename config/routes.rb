@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :favorites
   resources :games
   resources :users
-  resources :welcome
+  resources :welcome, only: [:home]
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
