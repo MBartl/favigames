@@ -1,9 +1,11 @@
 <h1>Hi, <%= @user.name %></h1>
 
-<h2> Your Favorite Games: </h2>
-<p><%= @favorites.each do |favorite|%></p>
-  <li><%= link_to favorite.game, game_path(favorite.game.id) %></li>
-<% end %>
+<!-- <h2> Your Favorite Games: </h2>
+<p><%#= @favorites.each do |favorite|%></p>
+  <li><%#= link_to favorite.game, game_path(favorite.game.id) %></li>
+<%# end %> -->
+
+<%= link_to "See A List of The All-Time Greatest Games", games_path %>
 
 
 <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
