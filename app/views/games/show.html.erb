@@ -2,3 +2,5 @@
 <h3><%= @game.genre %> game released in <%= @game.release_year %> by <%= @game.publisher %> for the <%= @game.platform.split(', ').to_sentence %></h3>
 <br>
 <%= image_tag(@game.image) %>
+<br> <br>
+<%= button_to "Add to Favorites", favorites_path(game_id: @game.id, user_id: session), method: :post %>

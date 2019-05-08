@@ -57,7 +57,7 @@ def add_pic
     elsif url_name == 'Ōkami'
       url_name = 'Okami'
     elsif url_name == "NBA Jam"
-      game.update(image: 'https://cdn.vox-cdn.com/thumbor/rKo6PVAIwsNcnQZ-4NGmmU1A3GI=/0x0:1100x618/1220x813/filters:focal(462x221:638x397):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/53893689/NBA_JAM.0.png')
+      game.update(image: 'https://i.ytimg.com/vi/5mf98dAnQ88/hqdefault.jpg')
     end
     html = open("https://en.wikipedia.org/wiki/#{url_name}")
     doc = Nokogiri::HTML(html)
