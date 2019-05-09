@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.1'
 
 gem 'pry'
+gem 'will_paginate', '~> 3.1.0'
 gem 'activerecord-reset-pk-sequence'
 # Web scraping
 gem 'nokogiri'

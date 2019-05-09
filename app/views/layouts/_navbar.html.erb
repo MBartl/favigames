@@ -1,0 +1,16 @@
+<div class="ui secondary  menu">
+  <%= link_to 'Home', users_path, class: 'item' %>
+  <%= link_to 'Games', games_path, class: 'item' %>
+  <div class="right menu">
+    <%= link_to 'Logout', session_path(session), method: 'delete', class: 'item' %>
+    <div class="item">
+      <%= form_tag(games_path, method: :get, class: "ui icon input") do %>
+        <%= text_field_tag(:search, params[:search], placeholder: "Search games...") %>
+        <%= button_tag(class: "search-submit") do %>
+          <i class="search link icon"></i>
+        <% end %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>

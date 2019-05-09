@@ -5,5 +5,6 @@ class User < ApplicationRecord
   has_many :games, through: :favorites
 
   validates :name, uniqueness: true
+  validates :password_digest, presence: true
 
 end
