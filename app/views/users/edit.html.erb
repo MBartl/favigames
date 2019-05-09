@@ -2,9 +2,12 @@
 
 <%= form_for @user do |f| %>
   <%= f.label :name, 'Username:' %>
-  <%= @user.name %><br>
+  <%= f.text_field :name, readonly: true %>
   <br>
-
+  <%= f.label 'Number of favorites:' %>
+  <%= @user.favorites.count %><br>
+  <br><br>
+  <p>Change Password</p>
   <%= f.label :password, 'New Password:' %><br>
   <%= f.password_field :password %>
 
@@ -12,14 +15,9 @@
   <%= f.password_field :password_confirmation %>
   <br>
 
-  <%= f.label :old_password, 'Old Password:' %><br>
-  <%= f.password_field :old_password %>
-  <br>
+  <%= f.label :old_password, 'Enter Old Password:' %><br>
+  <%= f.password_field :old_password %><br>
 
   <%= f.submit 'Update' %>
   <br>
-
-  <%= f.label 'Number of favorites:' %>
-  <%= @user.favorites.count %><br>
-  <br><br>
 <% end %>

@@ -1,5 +1,13 @@
+<br>
 <% @games.each do |game| %>
 <ul>
   <li><%= link_to game.name, game %>, <%= game.release_year %></li>
 </ul>
 <% end %>
+<br>
+<div class="digg_pagination">
+  <div class="page_info">
+    <%= page_entries_info @games %>
+  </div>
+  <%= will_paginate @games, :page_links => false %>
+</div>
