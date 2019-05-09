@@ -1,6 +1,14 @@
 <h2>favigames</h2>
 
-<%= link_to 'Sign Up', new_user_path, method: :get %><br>
-<%= link_to 'Log In', new_session_path, method: :get %><br>
-<br>
+<% if session[:user_id] %>
+  <%= link_to 'Home', users_path %><br>
+  <%= link_to 'Games', games_path %><br>
+  <br>
+
+<% else %>
+  <%= link_to 'Sign Up', new_user_path, method: :get %><br>
+  <%= link_to 'Log In', new_session_path, method: :get %><br>
+  <br>
+
+<% end %>
 <hr>

@@ -1,5 +1,7 @@
-<%= form_for :sessions do |f| %>
+<%= render 'layouts/errors' %>
+
+<%= form_for :sessions, url: '/sessions' do |f| %>
   Username: <%= f.text_field :name %>
-  Password: <%= f.password_field :password %>
+  Password: <%= f.password_field :password %><br>
   <%= f.submit "Submit" %>
 <% end %>
