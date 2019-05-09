@@ -2,12 +2,8 @@ Rails.application.routes.draw do
 
   resources :favorites
   resources :games
-  resources :users
-  resources :welcome, only: [:home]
+  resources :users, only: [:new, :create, :edit, :update, :index]
+  resources :sessions, only: [:new, :create, :delete]
 
-  get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
-  post '/logout' => 'sessions#destroy'
-
-  root 'welcome#home'
+  root 'users#index'
 end

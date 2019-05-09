@@ -1,0 +1,27 @@
+<% if @favorites == nil %>
+  <%= redirect_to games_path %>
+<% else %>
+  <h1>Hi, <%= @user.name %></h1>
+
+  <% if @favorites != [] %>
+    <h2> Your Favorite Games: </h2>
+    <ul>
+      <p><% @favorites.each do |favorite|%></p>
+      <li><%= link_to favorite.game.name, game_path(favorite.game.id) %></li>
+      <% end %>
+    </ul>
+    <br>
+    <%= link_to "See A List of The All-Time Greatest Games", games_path %>
+
+    <% else %>
+    <h2> You don't have any favorites yet.</h2>
+    <h2> Check out our <%= link_to "games list", games_path %> to find some favorites!</h2>
+    <% end %>
+
+    <br><br><br>
+
+    <%= button_to 'Account Settings', edit_user_path(@user), method: :get %>
+    <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+      <input type=submit value='Logout'>
+  <% end %>
+<% end %>
