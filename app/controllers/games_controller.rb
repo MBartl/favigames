@@ -14,7 +14,7 @@ class GamesController < ApplicationController
 
   private
   def search_games
-    @results = Game.all.select {|game| game.name.include?(params[:search].titleize)}
+    @results = Game.all.select {|game| game.name.downcase.include?(params[:search].downcase)}
     if @results.length == 0
       @user.errors.add(:no, "results match that search")
     elsif @results.length == 1
