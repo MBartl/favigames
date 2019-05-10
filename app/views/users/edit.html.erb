@@ -1,11 +1,28 @@
 <br>
-<% if @user.errors.full_messages.count < 2 %>
+<% if @user.errors.full_messages.count == 0 %>
+  <br>
+  <br>
+<% elsif @user.errors.full_messages.count == 1 %>
   <br>
 <% end %>
 
 <%= form_for @user do |f| %>
 <div class="ui segment">
   <div class="ui two column very relaxed grid">
+    <div class="column">
+      <%= f.label :password, 'New Password:' %><br>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, 'Confirm Password:' %><br>
+      <%= f.password_field :password_confirmation %>
+      <br>
+
+      <%= f.label :old_password, 'Enter Old Password:' %><br>
+      <%= f.password_field :old_password %>
+
+      <%= f.button 'Update Password', name: 'update_password', class: 'edit_user', default: true %>
+    </div>
+
     <div class="column">
       <%= f.label :name, 'Username:' %>
       <%= f.text_field :name, readonly: true %>
@@ -21,19 +38,6 @@
       <% end %>
     </div>
 
-    <div class="column">
-      <%= f.label :password, 'New Password:' %><br>
-      <%= f.password_field :password %>
-
-      <%= f.label :password_confirmation, 'Confirm Password:' %><br>
-      <%= f.password_field :password_confirmation %>
-      <br>
-
-      <%= f.label :old_password, 'Enter Old Password:' %><br>
-      <%= f.password_field :old_password %>
-
-      <%= f.button 'Update Password', name: 'update_password', class: 'edit_user', default: true %>
-    </div>
   </div>
 </div>
 

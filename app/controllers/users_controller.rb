@@ -22,6 +22,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    redirect_to edit_user_path
+  end
+
   def edit
     get_songs
   end
