@@ -1,23 +1,40 @@
-<%= render 'layouts/errors' %>
+<br>
+<% if @user.errors.full_messages.count < 2 %>
+  <br>
+<% end %>
 
 <%= form_for @user do |f| %>
-  <%= f.label :name, 'Username:' %>
-  <%= f.text_field :name, readonly: true %>
-  <br>
-  <%= f.label 'Number of favorites:' %>
-  <%= @user.favorites.count %><br>
-  <br><br>
-  <p>Change Password</p>
-  <%= f.label :password, 'New Password:' %><br>
-  <%= f.password_field :password %>
+<div class="ui segment">
+  <div class="ui two column very relaxed grid">
+    <div class="column">
+      <%= f.label :name, 'Username:' %>
+      <%= f.text_field :name, readonly: true %>
+      <br>
+      <%= f.label 'Number of favorites:' %>
+      <%= @user.favorites.count %><br>
+      <br><br>
+      <%= f.label "Change Audio:" %>
+      <%= f.select :audio, @songs %>
+      <%= f.button 'Update Song', name: 'update_song', class: 'edit_user' %>
+      <% if flash[:message] %>
+        <li class='message'><%= flash[:message] %></li>
+      <% end %>
+    </div>
 
-  <%= f.label :password_confirmation, 'Confirm Password:' %><br>
-  <%= f.password_field :password_confirmation %>
-  <br>
+    <div class="column">
+      <%= f.label :password, 'New Password:' %><br>
+      <%= f.password_field :password %>
 
-  <%= f.label :old_password, 'Enter Old Password:' %><br>
-  <%= f.password_field :old_password %><br>
+      <%= f.label :password_confirmation, 'Confirm Password:' %><br>
+      <%= f.password_field :password_confirmation %>
+      <br>
 
-  <%= f.submit 'Update' %>
-  <br>
+      <%= f.label :old_password, 'Enter Old Password:' %><br>
+      <%= f.password_field :old_password %>
+
+      <%= f.button 'Update Password', name: 'update_password', class: 'edit_user', default: true %>
+    </div>
+  </div>
+</div>
+
 <% end %>

@@ -1,0 +1,7 @@
+<ul>
+  <% @results.each do |result| %>
+    <li>
+      <%= link_to result.name, result %>, <%= result.release_year %>
+    </li><br>
+  <% end %>
+</ul>

@@ -1,8 +1,7 @@
-<%= render 'layouts/errors' %>
-
 <%= form_for :user, url: '/users' do |f| %>
   Username: <%= f.text_field :name %>
   Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %><br>
+  Password Confirmation: <%= f.password_field :password_confirmation %>
+  Theme Song: <%= f.select :audio, @songs %><br>
   <%= f.submit "Submit" %>
 <% end %>

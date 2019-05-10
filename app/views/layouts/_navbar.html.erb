@@ -1,6 +1,13 @@
 <div class="ui secondary  menu">
   <%= link_to 'Home', users_path, class: 'item' %>
   <%= link_to 'Games', games_path, class: 'item' %>
+
+  <% if cookies[:light] %>
+    <%= link_to 'Night Mode', dark_path, method: :get, class: 'item' %>
+  <% else %>
+    <%= link_to 'Light Mode', light_path, method: :get, class: 'item' %>
+  <% end %>
+
   <div class="right menu">
     <%= link_to 'Logout', session_path(session), method: 'delete', class: 'item' %>
     <div class="item">

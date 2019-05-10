@@ -3,7 +3,7 @@
 
 <% else %>
   <% if flash[:message] %>
-    <li class='errors'><%= flash[:message] %></li>
+    <li class='message'><%= flash[:message] %></li>
   <% else %>
     <br>
   <% end %>
@@ -29,5 +29,5 @@
 
   <%= button_to 'Account Settings', edit_user_path(@user), method: :get %>
 <% end %>
-
-<audio autoplay="true" controls="controls" src="/audios/zelda.mp3"></audio>
+<br><br><br>
+<%= audio_tag("#{@user.audio.downcase}.mp3", controls: true) %>

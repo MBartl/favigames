@@ -14,4 +14,26 @@ class ApplicationController < ActionController::Base
     return redirect_to(controller: 'games', action: 'index') unless logged_in?
   end
 
+  def redirect_cookie
+    if logged_in?
+      redirect_to users_path
+    else
+      redirect_to games_path
+    end
+  end
+
+  def light
+    cookies[:light] = {
+      value: 'light mode on'
+    }
+    redirect_cookie
+  end
+
+  def night
+    cookies.delete(:light)
+    redirect_cookie
+  end
+
+  $songs = ['Mario', 'Zelda', 'Sonic', 'Donkey Kong', 'Galaga', 'Pac-Man', 'EarthBound', 'Elder Scrolls', 'Katamari Damacy', 'Monkey Island', 'Psychonauts', 'Star Wars']
+
 end

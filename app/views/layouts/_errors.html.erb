@@ -4,7 +4,6 @@
       <li class='errors'><%= error %></li>
     <% end %>
   </ul>
-<% else %>
-  <br>
+<% elsif @user.errors.full_messages == [] && flash[:message] == nil %>
   <br>
 <% end %>

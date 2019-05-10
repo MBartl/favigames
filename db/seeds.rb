@@ -56,7 +56,7 @@ def add_pic
       url_name = 'Pokemon_Red_and_Blue'
     elsif url_name == 'Ōkami'
       url_name = 'Okami'
-    elsif url_name == "NBA Jam"
+    elsif url_name == 'NBA_Jam'
       game.update(image: 'https://i.ytimg.com/vi/5mf98dAnQ88/hqdefault.jpg')
     end
     html = open("https://en.wikipedia.org/wiki/#{url_name}")

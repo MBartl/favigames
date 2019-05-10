@@ -3,4 +3,5 @@ class Favorite < ApplicationRecord
   belongs_to :game
 
   validates :user, uniqueness: {scope: :game}
+  
 end

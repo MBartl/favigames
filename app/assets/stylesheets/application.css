@@ -14,9 +14,44 @@
  *= require_self
  */
 
- .title {
-   text-align: center;
- }
+#user_audio {
+  width: 167px;
+}
+
+#favorite_button, #remove_button {
+  display: inline;
+}
+
+h4 {
+  margin: 12px;
+}
+
+.edit_user {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 167px;
+    display: inline;
+}
+
+.next_page {
+  padding-left: 20px;
+}
+
+.title {
+  text-align: center;
+}
+
+.active {
+  background-color: rgb(105, 148, 185);
+}
+
+.errors {
+  color: red;
+}
+
+.message {
+  color: #41adff;
+}
 
 .search-submit {
   background-color: ##324759;
@@ -31,7 +66,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #7199bb;
+    background: #bbc5cc;
 }
 
 .ui.menu .item {
@@ -47,15 +82,39 @@
   align-self: flex-end;
 }
 
+div.ui.two.column.very.relaxed.grid {
+  color: #000;
+  background-color: #bbc5cc;
+}
+
 input[type="submit" i] {
   padding: 10;
   align-self: flex-end;
 }
 
-.active {
-  background-color: rgb(105, 148, 185);
+.ui.basic.secondary.button:hover {
+  background-color: #7b2222!important;
 }
 
-.errors {
-  color: red;
+.ui.basic.secondary.button:focus {
+  background-color: #671e1e!important;
+}
+
+form.button_to {
+  display: inline-block;
+}
+
+input.ui.primary.basic.button {
+  color: #114b77;
+  background-color: #fff!important;
+}
+
+input.ui.secondary.basic.button {
+  display: inline-block;
+  background-color: #b33939!important;
+}
+
+input.ui.disabled.button {
+  display: inline-block;
+  background-color: rgb(224, 225, 226);
 }
