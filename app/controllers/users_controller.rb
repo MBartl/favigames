@@ -18,6 +18,7 @@ class UsersController < ApplicationController
       redirect_to users_path
     else
       check_passwords
+      get_songs
       render 'new'
     end
   end
